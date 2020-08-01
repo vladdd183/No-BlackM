@@ -2,7 +2,7 @@ import requests, os, sys
 from time import sleep
 from bs4 import BeautifulSoup as bs
    
-dataAV = []
+dataAV = [] 
 RESET ='\033[0m'
 UNDERLINE = '\033[04m'
 GREEN = '\033[32m'
