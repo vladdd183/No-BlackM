@@ -5,7 +5,7 @@
 
 ## Внимание:
 **- Telegram: FELIX4**
-**- Группа в Telegram: https://t.me/No_Black_Mail_chat **
+**- Группа в Telegram: https://t.me/No_Black_Mail_chat**
 
 **- Разработчик данного инструмента отказывается принимать 
 ответственность за действия 
