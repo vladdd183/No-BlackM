@@ -27,7 +27,7 @@ pip install requests bs4
 git clone https://github.com/DataSC3/No-BlackM
 cd No-BlackM
 python No-BlackMail.py
-```
+``` 
 ### Linux:
 ```Bash
 sudo apt-get install git 
