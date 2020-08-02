@@ -43,9 +43,8 @@ python3 No-BlackMail.py
 ```Bash
 pip install requests bs4
 ```
-**- Запуск:**
-
-**- [Скачайте репозиторий можно тут] (https://github.com/DataSC3/No-BlackM/archive/master.zip) и распакуйте в удобное место.**
+Запуск:
+[Скачайте репозиторий можно тут] (https://github.com/DataSC3/No-BlackM/archive/master.zip) и распакуйте в удобное место.
 
 **- Перейдите в папку со скриптом откройте в этой папке консоль `Shift + ПКМ`**
 **- Запустите скрипт командой `python No-BlackMail.py`**
