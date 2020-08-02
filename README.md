@@ -38,13 +38,13 @@ cd No-BlackM
 python3 No-BlackMail.py
 ```
 ### Windows (cmd):
-**1. Установите Python 3**\
-[Скачать Python](https://www.python.org/downloads/) ВАЖНО: _поставьте галочку "Add to PATH" при установке_\
-После установки, откройте консоль и введите:
+**- Установите Python 3\
+[Скачать Python](https://www.python.org/downloads/)  ВАЖНО: _поставьте галочку "Add to PATH" при установке_\
+После установки, откройте консоль и введите:**
 ```Bash
 pip install requests bs4
 ```
-**2. [Скачайте репозиторий]** (https://github.com/DataSC3/No-BlackM) и распакуйте в удобное место.
+[Скачайте репозиторий] (https://github.com/DataSC3/No-BlackM) и распакуйте в удобное место.
 
 **- Перейдите в папку со скриптом откройте в этой папке консоль `Shift + ПКМ`**
 **- Запустите скрипт командой `python No-BlackMail.py`**
