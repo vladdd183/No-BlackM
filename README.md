@@ -38,7 +38,7 @@ python3 No-BlackMail.py
 ```
 ### Windows (cmd):
 **- Установите Python 3:\
-[Скачать Python](https://www.python.org/downloads/)  ВАЖНО: _поставьте галочку "Add to PATH" при установке_\
+[Скачать Python можно тут.](https://www.python.org/downloads/)  ВАЖНО: _поставьте галочку "Add to PATH" при установке_\
 После установки, откройте консоль и введите:**
 ```Bash
 pip install requests bs4
