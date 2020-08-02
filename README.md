@@ -1,12 +1,11 @@
 # No-BlackM Beta: v:1.0
      
-- Поиск данных по номеру:
-- На данный момент это Авито, Данные о номере такие как: Страна, Город, Оператор
+Поиск данных по номеру:
+На данный момент это Авито, Данные о номере такие как: Страна, Город, Оператор
 и многое другое..
 
-- В блищее время будет обновление.
-- Telegram: FELIX4
-- Группа в Telegram: https://t.me/joinchat/KAPLfBzkAcB1ccnR
+Telegram: FELIX4
+Группа в Telegram: https://t.me/joinchat/KAPLfBzkAcB1ccnR
 
 Разработчик: @FELIX4
 Наша группа в Telegram: https://t.me/joinchat/KAPLfBzkAcB1ccnR
