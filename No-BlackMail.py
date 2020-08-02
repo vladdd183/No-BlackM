@@ -28,7 +28,7 @@ else:
     try:
         bannerTX = open('README.md', encoding='utf-8').read()
         print(bannerTX[214:815].replace('#','').replace('*','').replace('-','•'))
-        print(f'{LI_G}Этот текст покажется лишь один раз!{RESET}')
+        print(f'\n{LI_G}Этот текст покажется лишь один раз!{RESET}')
         open('.banner_840','w')
         input(f'{LI_G}Нажмите на ENTER чтобы очистить экран: {RESET}')
         clear()
