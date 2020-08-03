@@ -160,15 +160,19 @@ try:
     except:
         print(f'{YELLOW}{BOLD}[!] {RED}Данные Город/Оператор не найдены{RESET}')
     if number[0] == '7' and len(number)>9:
-        review_ph = requests.get(f'http://phoneradar.ru/phone/{number}')
-        try:reviews_rev = bs(review_ph.text, 'html.parser').find('div', class_='alert alert-danger').text.strip()
-        except:reviews_rev = bs(review_ph.text, 'html.parser').find('div', class_='alert alert-info').text.strip()
-        print(f'{YELLOW}{BOLD}[+] {LI_G}Рейтин: {F_CL}{reviews_rev}{RESET}')
         if num_P['limit'] == 0:pass
         else: 
+            
             name = []
             dataAV = []
             dataOB = []
+            
+            review_ph = requests.get(f'http://phoneradar.ru/phone/{number}')
+            try:reviews_rev = bs(review_ph.text, 'html.parser').find('div', class_='alert alert-danger').text.strip()
+            except KeyboardInterrupt:sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
+            except:reviews_rev = bs(review_ph.text, 'html.parser').find('div', class_='alert alert-info').text.strip()
+            print(f'{YELLOW}{BOLD}[+] {LI_G}Рейтин: {F_CL}{reviews_rev}{RESET}')
+            
             try:
                 def get_url_name_avito(number):
                     resAV = requests.get('https://mirror.bullshit.agency/search_by_phone/'+str(number))
@@ -266,7 +270,7 @@ try:
             print(f'{YELLOW}{BOLD}[7] {URL_L}{UNDERLINE}tel:{str(number)} {RESET}- Звонок на номер с телефона')
             print(f'{YELLOW}{BOLD}[8] {URL_L}{UNDERLINE}https://nuga.app {RESET}- Поиск аккаунтов Instagram')
 
-        print(f'\n{YELLOW}{BOLD}[+] {LI_G}Данные о номере: +{str(number)} добавлены в файл {RESET}dataFile.txt')
+            print(f'\n{YELLOW}{BOLD}[+] {LI_G}Данные о номере: +{str(number)} добавлены в файл {RESET}dataFile.txt')
     print(f'{YELLOW}{BOLD}[!] {RED}Всего лимитов: {str(num_P["limit"])}{RESET}')
 
 except KeyboardInterrupt:
