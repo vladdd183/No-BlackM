@@ -260,7 +260,7 @@ try:
                     
                 print(f'{YELLOW}{BOLD}[!] {RED}Ваш запрос временно заблокирован. Пожалуйста, подождите 2-6 минуты.{RESET}')
                     
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Проверьте эти ссылки ( Месенджеры и Социальные сети ): {RESET}')
+            print(f'\n{YELLOW}{BOLD}[+] {LI_G}Проверьте эти ссылки ( Месенджеры и Социальные сети ): {RESET}')
             print(f'{YELLOW}{BOLD}[1] {URL_L}{UNDERLINE}https://api.whatsapp.com/send?phone={str(number)}&text=Hello,%20this%20is%20No-BlackMail {RESET}- Поиск номера в  WhatsApp')
             print(f'{YELLOW}{BOLD}[2] {URL_L}{UNDERLINE}https://facebook.com/login/identify/?ctx=recover&ars=royal_blue_bar {RESET}- Поиск аккаунтов FaceBook')
             print(f'{YELLOW}{BOLD}[3] {URL_L}{UNDERLINE}https://linkedin.com/checkpoint/rp/request-password-reset-submit {RESET}- Поиск аккаунтов Linkedin')
