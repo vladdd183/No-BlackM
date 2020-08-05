@@ -18,7 +18,7 @@ F_CL = '\033[0m'
 def banner():
     print(RED+'''█▄▄ █   █▀█ █▀▀ █▄▀ █▀▄▀█ █▀█ █ █'''+GREEN+'''
 █▄█ █▄▄ █▀█ █▄▄ █ █ █ ▀ █ █▀█ █ █▄▄
-                           '''+RESET+RED+'V: 1.0.2\n')
+                           '''+RESET+RED+'V: 1.0.3\n')
 def clear():
     if os.sys.platform == "win32":os.system("cls")
     else:os.system("clear")
