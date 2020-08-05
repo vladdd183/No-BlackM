@@ -1,7 +1,9 @@
 import requests, os, sys
 from time import sleep
 from bs4 import BeautifulSoup as bs
- 
+# Мой Telegram: @FELIX4 - Для вопросов и поддержки (советы и т.д)
+# Наша группа в Telegram: https://t.me/No_Black_Mail_chat - Там вы можете предлогать свои идеи и т.д
+
 dataAV = []
 RESET ='\033[0m'
 UNDERLINE = '\033[04m'
@@ -89,7 +91,6 @@ def getNumber():
             pass
         
         banner()
-        # print(f'{YELLOW}{BOLD}[~] {LI_G}Все форма {RESET}')
         getNumber=input(f'{YELLOW}{BOLD}[~] {LI_G}Введите номер: {RESET}')
         getNumber=getNumber.replace('+', '').replace('-', '').replace('(', '').replace(')', '').replace(' ', '')
         if getNumber.isdigit():return getNumber
@@ -106,59 +107,81 @@ try:
     try:
         country = num_P['country']
         for a in country:
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Страна:{F_CL} {country["name"]}, {country["fullname"]}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Код страны:{F_CL} {country["country_code3"]}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Код номера:{F_CL} {str(country["telcod"])}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Длина номера:{F_CL} {str(country["telcod_len"])}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Локация:{F_CL} {country["location"]}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Язык:{F_CL} {country["lang"]}{RESET}')
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Страна:{F_CL} {country["name"]}, {country["fullname"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Стране не найдены{RESET}'); pass
+            
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Код страны:{F_CL} {country["country_code3"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Коде страны не найдены{RESET}'); pass
+
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Код номера:{F_CL} {str(country["telcod"])}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Коде номера не найдены{RESET}'); pass
+            
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Длина номера:{F_CL} {str(country["telcod_len"])}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Длине номера не найдены{RESET}'); pass
+
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Локация:{F_CL} {country["location"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Локации не найдены{RESET}'); pass
+            
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Язык:{F_CL} {country["lang"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Языке не найдены{RESET}'); pass
             break
-    except KeyboardInterrupt:
-        sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
-    except:
-        print(f'{YELLOW}{BOLD}[!] {RED}Данные Страна/Язык не найдены{RESET}')
-        pass
+    except KeyboardInterrupt:sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
+    except:print(f'{YELLOW}{BOLD}[!] {RED}Данные Страна/Язык не найдены{RESET}'); pass
 
     try:
         region = num_P['region']
-        for b in region:
+        for reg in region:
             endIndex = region['name'].split()
-            if endIndex[1] == 'край':
-                print(f'{YELLOW}{BOLD}[+] {LI_G}Край:{F_CL} {region["name"]}{RESET}')
-            elif endIndex[1] == 'область':
-                print(f'{YELLOW}{BOLD}[+] {LI_G}Область:{F_CL} {region["name"]}{RESET}')
-            else:
-                print(f'{YELLOW}{BOLD}[+] {LI_G}Название:{F_CL} {region["name"]}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Округ:{F_CL} {region["okrug"]}{RESET}')
+            
+            try:
+                if endIndex[1] == 'край':print(f'{YELLOW}{BOLD}[+] {LI_G}Край:{F_CL} {region["name"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Крае не найдены{RESET}')  
+            
+            try:
+                if endIndex[1] == 'область':print(f'{YELLOW}{BOLD}[+] {LI_G}Область:{F_CL} {region["name"]}{RESET}')
+                else:print(f'{YELLOW}{BOLD}[+] {LI_G}Название:{F_CL} {region["name"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные об Области не найдены{RESET}')  
+            
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Округ:{F_CL} {region["okrug"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные об Округе не найдены{RESET}')  
+        
             break
-    except KeyboardInterrupt:
-        sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
-    except:
-        print(f'{YELLOW}{BOLD}[!] {RED}Данные Область/Край не найдены{RESET}')
+
+    except KeyboardInterrupt:sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
+    except:print(f'{YELLOW}{BOLD}[!] {RED}Данные Область/Край не найдены{RESET}'); pass
 
     try:
         capital = num_P['capital']
         for c in capital:
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Столица:{F_CL} {capital["name"]}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Код домашнего номера столицы:{F_CL} +{str(capital["telcod"])}{RESET}')
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Столица:{F_CL} {capital["name"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные об Сталице не найдены{RESET}')  
+
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Код домашнего номера столицы:{F_CL} +{str(capital["telcod"])}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Домашнем номере не найдены{RESET}')  
             break
-    except KeyboardInterrupt:
-        sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
-    except:
-        print(f'{YELLOW}{BOLD}[!] {RED}Данные Код/Столица не найдены{RESET}')
+
+    except KeyboardInterrupt:sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
+    except:print(f'{YELLOW}{BOLD}[!] {RED}Данные Код/Столица не найдены{RESET}'); pass
 
     try:
         data = num_P['0']
         for c in data:
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Город:{F_CL} {data["name"]}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Район:{F_CL} {str(data["rajon"])}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Оператор:{F_CL} {data["oper_brand"]}{RESET}')
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Номера:{F_CL} {str(data["def"])}{RESET}')
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Город:{F_CL} {data["name"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Городе не найдены{RESET}')  
+
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Район:{F_CL} {str(data["rajon"])}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Районе не найдены{RESET}')  
+            
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Оператор:{F_CL} {data["oper_brand"]}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные об Операторе не найдены{RESET}')  
+        
+            try:print(f'{YELLOW}{BOLD}[+] {LI_G}Номера:{F_CL} {str(data["def"])}{RESET}')
+            except:print(f'{YELLOW}{BOLD}[!] {RED}Данные о Номерах оператора не найдены{RESET}')  
+
             break
-    except KeyboardInterrupt:
-        sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
-    except:
-        print(f'{YELLOW}{BOLD}[!] {RED}Данные Город/Оператор не найдены{RESET}')
+    except KeyboardInterrupt:sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
+    except:print(f'{YELLOW}{BOLD}[!] {RED}Данные Город/Оператор не найдены{RESET}'); pass
+
     if number[0] == '7' and len(number)>9:
         if num_P['limit'] == 0:pass
         else: 
@@ -170,7 +193,9 @@ try:
             review_ph = requests.get(f'http://phoneradar.ru/phone/{number}')
             try:reviews_rev = bs(review_ph.text, 'html.parser').find('div', class_='alert alert-danger').text.strip()
             except KeyboardInterrupt:sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода..{RESET}')
-            except:reviews_rev = bs(review_ph.text, 'html.parser').find('div', class_='alert alert-info').text.strip()
+            except:
+                try:reviews_rev = bs(review_ph.text, 'html.parser').find('div', class_='alert alert-info').text.strip()
+                except:reviews_rev = 'Рейтинг номера не определен, отзывов о номере еще нет'
             print(f'{YELLOW}{BOLD}[+] {LI_G}Рейтин: {F_CL}{reviews_rev}{RESET}')
             
             try:
@@ -260,20 +285,20 @@ try:
                     
                 print(f'{YELLOW}{BOLD}[!] {RED}Ваш запрос временно заблокирован. Пожалуйста, подождите 2-6 минуты.{RESET}')
                     
-            print(f'\n{YELLOW}{BOLD}[+] {LI_G}Проверьте эти ссылки ( Месенджеры и Социальные сети ): {RESET}')
-            print(f'{YELLOW}{BOLD}[1] {URL_L}{UNDERLINE}https://api.whatsapp.com/send?phone={str(number)}&text=Hello,%20this%20is%20No-BlackMail {RESET}- Поиск номера в  WhatsApp')
-            print(f'{YELLOW}{BOLD}[2] {URL_L}{UNDERLINE}https://facebook.com/login/identify/?ctx=recover&ars=royal_blue_bar {RESET}- Поиск аккаунтов FaceBook')
-            print(f'{YELLOW}{BOLD}[3] {URL_L}{UNDERLINE}https://linkedin.com/checkpoint/rp/request-password-reset-submit {RESET}- Поиск аккаунтов Linkedin')
-            print(f'{YELLOW}{BOLD}[4] {URL_L}{UNDERLINE}https://twitter.com/account/begin_password_reset {RESET}- Поиск аккаунтов Twitter')
-            print(f'{YELLOW}{BOLD}[5] {URL_L}{UNDERLINE}viber://add?number={str(number)} {RESET}- Поиск номера в Viber')
-            print(f'{YELLOW}{BOLD}[6] {URL_L}{UNDERLINE}skype:{str(number)}?call {RESET}- Звонок на номер с Skype')
-            print(f'{YELLOW}{BOLD}[7] {URL_L}{UNDERLINE}tel:{str(number)} {RESET}- Звонок на номер с телефона')
-            print(f'{YELLOW}{BOLD}[8] {URL_L}{UNDERLINE}https://nuga.app {RESET}- Поиск аккаунтов Instagram')
+    print(f'\n{YELLOW}{BOLD}[+] {LI_G}Проверьте эти ссылки ( Месенджеры и Социальные сети ): {RESET}')
+    print(f'{YELLOW}{BOLD}[1] {URL_L}{UNDERLINE}https://api.whatsapp.com/send?phone={str(number)}&text=Hello,%20this%20is%20No-BlackMail {RESET}- Поиск номера в  WhatsApp')
+    print(f'{YELLOW}{BOLD}[2] {URL_L}{UNDERLINE}https://facebook.com/login/identify/?ctx=recover&ars=royal_blue_bar {RESET}- Поиск аккаунтов FaceBook')
+    print(f'{YELLOW}{BOLD}[3] {URL_L}{UNDERLINE}https://linkedin.com/checkpoint/rp/request-password-reset-submit {RESET}- Поиск аккаунтов Linkedin')
+    print(f'{YELLOW}{BOLD}[4] {URL_L}{UNDERLINE}https://twitter.com/account/begin_password_reset {RESET}- Поиск аккаунтов Twitter')
+    print(f'{YELLOW}{BOLD}[5] {URL_L}{UNDERLINE}viber://add?number={str(number)} {RESET}- Поиск номера в Viber')
+    print(f'{YELLOW}{BOLD}[6] {URL_L}{UNDERLINE}skype:{str(number)}?call {RESET}- Звонок на номер с Skype')
+    print(f'{YELLOW}{BOLD}[7] {URL_L}{UNDERLINE}tel:{str(number)} {RESET}- Звонок на номер с телефона')
+    print(f'{YELLOW}{BOLD}[8] {URL_L}{UNDERLINE}https://nuga.app {RESET}- Поиск аккаунтов Instagram')
 
-            print(f'\n{YELLOW}{BOLD}[+] {LI_G}Данные о номере: +{str(number)} добавлены в файл {RESET}dataFile.txt')
+    print(f'\n{YELLOW}{BOLD}[+] {LI_G}Данные о номере: +{str(number)} добавлены в файл {RESET}dataFile.txt')
     print(f'{YELLOW}{BOLD}[!] {RED}Всего лимитов: {str(num_P["limit"])}{RESET}')
 
 except KeyboardInterrupt:
-    print(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода{RESET}')
+    sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Принудительная остановка кода{RESET}')
 except:
-    print(f'\n{YELLOW}{BOLD}[!] {RED}Возможно, плохое интернет-соединение, попробуйте перезагрузить или напишите мне:{RESET}\n{YELLOW}{BOLD}[+] {LI_G}Telegram:{YELLOW} @FELIX4{RESET}')
+    sys.exit(f'\n{YELLOW}{BOLD}[!] {RED}Возможно, плохое интернет-соединение, попробуйте перезагрузить или напишите мне:{RESET}\n{YELLOW}{BOLD}[+] {LI_G}Telegram:{YELLOW} @FELIX4{RESET}')
