@@ -37,8 +37,8 @@
 ## Установка и запуск:
 ### Termux:
 ```Bash
-apt install git 
-pkg install python
+pkg update -y && upgrade -y
+pkg install git -y python -y
 pip install requests bs4 
 git clone https://github.com/DataSC3/No-BlackM
 cd No-BlackM
