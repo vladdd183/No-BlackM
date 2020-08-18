@@ -399,7 +399,7 @@ def getContact(number):
             num_name.append(i.text.strip())
 
         if not num_name:
-            print(f'{YELLOW}{BOLD}[+] {LI_G}Теги по номеру: {F_CL}Нечего нету{RESET}')
+            print(f'{YELLOW}{BOLD}[+] {LI_G}Теги по номеру: {F_CL}Нечего нет{RESET}')
         else:
             print(YELLOW+BOLD+'[+]'+LI_G+' Теги с номера: '+F_CL+', '.join(num_name))
             fileD.write('[+] Теги с номера: '+', '.join(num_name)+'\n')
