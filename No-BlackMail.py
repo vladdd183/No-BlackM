@@ -3,11 +3,11 @@ from time import sleep
 try:
     import requests
 except ImportError:
-    print('[!] Увас отсуствует requests. pip install requests')
+    exit('[!] Увас отсуствует requests. pip install requests')
 try:
     from bs4 import BeautifulSoup as bs
 except ImportError:
-    print('[!] Увас отсуствует BeautifulSoup. pip install bs4')
+    exit('[!] Увас отсуствует BeautifulSoup. pip install bs4')
 
 # Мой Telegram: @FELIX4 - Для вопросов и поддержки (советы и т.д)
 # Наш Канал в Telegram: https://t.me/No_BlackM - Там вы можете узнать всё новое о No-BlackMail
