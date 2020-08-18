@@ -3,10 +3,18 @@ from time import sleep
 try:
     import requests
 except ImportError:
+    if os.sys.platform == "win32":
+        os.system("cls")
+    else:
+        os.system("clear") 
     exit('[!] Увас отсуствует requests. pip install requests')
 try:
     from bs4 import BeautifulSoup as bs
 except ImportError:
+    if os.sys.platform == "win32":
+        os.system("cls")
+    else:
+        os.system("clear")
     exit('[!] Увас отсуствует BeautifulSoup. pip install bs4')
 
 # Мой Telegram: @FELIX4 - Для вопросов и поддержки (советы и т.д)
