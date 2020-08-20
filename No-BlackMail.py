@@ -16,7 +16,7 @@ except ImportError:
     else:
         os.system("clear")
     exit('[!] Увас отсуствует BeautifulSoup. pip install bs4')
- 
+  
 # Мой Telegram: @FELIX4 - Для вопросов и поддержки (советы и т.д)
 # Наш Канал в Telegram: https://t.me/No_BlackM - Там вы можете узнать всё новое о No-BlackMail
 # Наш Telegram-Bot: https://t.me/No_BlackMail-bot - Там вы можете проверить номер по базе GetContact и т.д
