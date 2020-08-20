@@ -17,7 +17,7 @@ except ImportError:
         os.system("clear")
     exit('[!] Увас отсуствует BeautifulSoup. pip install bs4')
 
-# Мой Telegram: @FELIX4 - Для вопросов и поддержки (советы и т.д) +
+# Мой Telegram: @FELIX4 - Для вопросов и поддержки (советы и т.д)
 # Наш Канал в Telegram: https://t.me/No_BlackM - Там вы можете узнать всё новое о No-BlackMail
 # Наш Telegram-Bot: https://t.me/No_BlackMail-bot - Там вы можете проверить номер по базе GetContact и т.д
 # Наша Группа в Telegram: https://t.me/No_Black_Mail_chat - Там вы можете предлогать свои идеи и т.д
@@ -103,7 +103,8 @@ def getVersion():
                 except KeyboardInterrupt:
                     sys.exit(f'\n{CYAN}{BOLD}[!] {RED}Принудительная остановка кода{RESET}')
             else:
-                pass
+                clear()
+                print(f'{YELLOW}{BOLD}[#] {LI_G}Подготовка... {RESET}')
             versioUR = requests.get('https://github.com/DataSC3/No-BlackM')
             versioURL = bs(versioUR.text, 'html.parser')
             get_version = versioURL.find(['span'], class_='d-none d-sm-inline').findNext(['strong']).text
@@ -115,7 +116,7 @@ def getVersion():
                         with open('.banner_840', 'w') as fileW:
                             fileW.write('Version:'+str(get_version))
                             clear()
-                            for _ in range(4):
+                            for _ in range(3):
                                 print(f'{YELLOW}{BOLD}[!]-{LI_G} Доступно новое обновление {YELLOW}-[!]')
                                 sleep(0.4)
                                 clear()
@@ -127,7 +128,10 @@ def getVersion():
                                 print(f'{YELLOW}{BOLD}[!]-->{LI_G} Доступно новое обновление {YELLOW}<--[!]{RESET}')
                                 sleep(0.4)
                                 clear()
-                            
+
+                            print(f'{YELLOW}{BOLD}[#] {LI_G}Для обновления напишите: {RESET}git pull{LI_G} Не выходя из папки.')
+                            sleep(1.4)
+                            clear()
                     else:
                         pass
                         
@@ -490,28 +494,29 @@ def save():
     except NameError:
         pass 
 
-
+getVersion()
 while True:
-    getVersion()
-    # clear() 
-    banner()
-    print(f'{YELLOW}{BOLD}[#] {LI_G}Пример: {DARK}+7 495 766 11-11{RESET}')
-    getNumber=input(f'{YELLOW}{BOLD}[~] {LI_G}Введите номер: {RESET}')
-    repNumber=getNumber.replace('+', '').replace('-', '').replace('(', '').replace(')', '').replace(' ', '')
-    if repNumber.isdigit():
-        if repNumber[0] == '8':
-            repNumber = repNumber[1:]
-            number = '7'+repNumber
-            
-        else:
-           number = repNumber
-    else:
-        print(f'{YELLOW}{BOLD}[!] {RED}"{RESET}{getNumber}{RED}" - Не является номером\n{RESET}')
-        continue
-
-    fileD = open('dataFile.txt', 'a', encoding='utf-8')
-
     try:
+        
+        banner()
+        print(f'{YELLOW}{BOLD}[#] {LI_G}Пример: {DARK}+7 495 766 11-11{RESET}')
+        getNumber=input(f'{YELLOW}{BOLD}[~] {LI_G}Введите номер: {RESET}')
+        repNumber=getNumber.replace('+', '').replace('-', '').replace('(', '').replace(')', '').replace(' ', '')
+        
+        if repNumber.isdigit():
+            if repNumber[0] == '8':
+                repNumber = repNumber[1:]
+                number = '7'+repNumber
+                ######
+            else:
+                number = repNumber
+        else:
+            print(f'{YELLOW}{BOLD}[!] {RED}"{RESET}{getNumber}{RED}" - Не является номером\n{RESET}')
+            sleep(1)
+            clear()
+            continue
+
+        fileD = open('dataFile.txt', 'a', encoding='utf-8')
         try:
             num_P = requests.post('https://htmlweb.ru/geo/api.php?json&telcod='+str(number)).json()
             interNet = num_P['limit']
