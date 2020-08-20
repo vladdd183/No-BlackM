@@ -22,7 +22,7 @@ except ImportError:
 # Наш Telegram-Bot: https://t.me/No_BlackMail-bot - Там вы можете проверить номер по базе GetContact и т.д
 # Наша Группа в Telegram: https://t.me/No_Black_Mail_chat - Там вы можете предлогать свои идеи и т.д
 # Разработчик нашего GetContact Сервера: @Naarek  Онлайн сервис: https://phonebook.space
-
+ 
 dataAV = []
 RESET ='\033[0m'
 UNDERLINE = '\033[04m'
