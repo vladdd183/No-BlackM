@@ -722,7 +722,7 @@ while True:
                 clear()
                 exit()
             else:
-                pass     
+                clear()    
         except requests.exceptions.RequestException:        
             sys.exit(f'{YELLOW}{BOLD}[!] {RED}Для проверки номера включите VPN и перезапустите. Ваш провайдер не поддерживает.{RESET}')
         except ValueError:  
