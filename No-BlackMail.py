@@ -86,15 +86,24 @@ def bannerCH():
                     os.remove('dataFile.txt')
                     clear() 
                     print(f'{YELLOW}{BOLD}[+] {LI_G}Данные будут:{RESET} Перезаписаны')
-                    sleep(1)
+                    sleep(0.5)
+                    
+                    clear()
+                    print(f'{YELLOW}{BOLD}[#] {LI_G}Подготовка... {RESET}')
                 elif dataV == '2':
                     clear()
                     print(f'{YELLOW}{BOLD}[+] {LI_G}Данные будут:{RESET} Добавлены к остальным')
-                    sleep(1)
+                    sleep(0.5)
+                    
+                    clear()
+                    print(f'{YELLOW}{BOLD}[#] {LI_G}Подготовка... {RESET}')
                 else:
                     clear()
                     print(f'{YELLOW}{BOLD}[+] {LI_G}Данные будут:{RESET} Добавлены к остальным')
-                    sleep(1)
+                    sleep(0.5)
+                    
+                    clear()
+                    print(f'{YELLOW}{BOLD}[#] {LI_G}Подготовка... {RESET}')
             except KeyboardInterrupt:
                 sys.exit(f'\n{CYAN}{BOLD}[!] {RED}Принудительная остановка кода{RESET}')
         else:
