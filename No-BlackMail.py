@@ -130,7 +130,7 @@ def getVersion():
                                 clear()
 
                             print(f'{YELLOW}{BOLD}[#] {LI_G}Для обновления напишите: {RESET}git pull{LI_G} Не выходя из папки.')
-                            sleep(1.4)
+                            sleep(3)
                             clear()
                     else:
                         pass
