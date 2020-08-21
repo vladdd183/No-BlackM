@@ -366,7 +366,7 @@ def num_mnp_request():
                     print(f'{YELLOW}{BOLD}[!] {LI_G}Округ:{F_CL} Неизвестно {RESET}')
 
                 try:
-                    print(PINK+BOLD+'[+]'+LI_G+' Код машин: '+F_CL+region["autocod"].replace(',', ', ')+RESET)
+                    print(PINK+BOLD+'[+]'+LI_G+' Код машин: '+F_CL+str(region["autocod"]).replace(',', ', ')+RESET)
                     fileD.write(f'[+] Код машин: {region["autocod"]} \n')
 
                 except KeyError:
