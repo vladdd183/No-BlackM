@@ -41,15 +41,15 @@ DARK = '\033[90m'
 def banner():
     print(RED+'''█▄▄ █   █▀█ █▀▀ █▄▀ █▀▄▀█ █▀█ █ █'''+GREEN+'''
 █▄█ █▄▄ █▀█ █▄▄ █ █ █ ▀ █ █▀█ █ █▄▄
-                           '''+RESET+RED+'V: 1.0.4\n')
+                           '''+RESET+RED+'V: 1.0.4.3\n')
 def banner_ip():
     print(CYAN+'''█▄▄ █   █▀█ █▀▀ █▄▀ █▀▄▀█ █▀█ █ █'''+PINK+'''
 █▄█ █▄▄ █▀█ █▄▄ █ █ █ ▀ █ █▀█ █ █▄▄
-                           '''+RESET+CYAN+'V: 1.0.4\n')
+                           '''+RESET+CYAN+'V: 1.0.4.3\n')
 def banner_mnp():
     print(PINK+'''█▄▄ █   █▀█ █▀▀ █▄▀ █▀▄▀█ █▀█ █ █'''+CYAN+'''
 █▄█ █▄▄ █▀█ █▄▄ █ █ █ ▀ █ █▀█ █ █▄▄
-                           '''+RESET+PINK+'V: 1.0.4\n')
+                           '''+RESET+PINK+'V: 1.0.4.3\n')
 
 def clear():
     if os.sys.platform == "win32":
