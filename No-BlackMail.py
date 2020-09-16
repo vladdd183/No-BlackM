@@ -21,7 +21,7 @@ except ImportError:
 # Наш Канал в Telegram: https://t.me/No_BlackM - Там вы можете узнать всё новое о No-BlackMail
 # Наш Telegram-Bot: https://t.me/No_BlackMail-bot - Там вы можете проверить номер по базе GetContact и т.д
 # Наша Группа в Telegram: https://t.me/No_Black_Mail_chat - Там вы можете предлогать свои идеи и т.д
-
+ 
 dataAV = []
 RESET ='\033[0m'
 UNDERLINE = '\033[04m'
