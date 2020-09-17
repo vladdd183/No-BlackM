@@ -489,6 +489,8 @@ while True:
         getNumber=input(f'{YELLOW}{BOLD}[~] {LI_G}Введите номер: {RESET}')
         repNumber=getNumber.replace('+', '').replace('-', '').replace('(', '').replace(')', '').replace(' ', '')
         
+        number = repNumber
+                  
         if repNumber.isdigit():
             if repNumber.startswith('8'):
                 number = ''.join(('7', repNumber[1:]))
