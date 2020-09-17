@@ -490,8 +490,8 @@ while True:
         repNumber=getNumber.replace('+', '').replace('-', '').replace('(', '').replace(')', '').replace(' ', '')
         
         if repNumber.isdigit():
-            if number.startswith('8'):
-                number = ''.join(('7', number[1:]))
+            if repNumber.startswith('8'):
+                number = ''.join(('7', repNumber[1:]))
             else:
                 number = repNumber
         else:
